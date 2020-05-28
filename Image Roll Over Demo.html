@@ -1,0 +1,35 @@
+<html> 
+    <head> 
+        <style> 
+            .gallery {
+                width: 70px;
+                height: 70px;
+                border: solid 4x grey;
+            }
+        
+        </style>
+    </head>
+<body>
+<title> Image Processing </title>
+    <div> 
+    <img src = "2.jpg" width = "360px" height = "360px" id = "main"> 
+    </div>
+    <hr/>
+    <div onmouseover="rollimages(event)">
+        <img src = "1.jpg" class = "gallery">
+        <img src = "2.jpg" class = " gallery">
+        <img src = "3.jpg" class = " gallery">
+        
+    </div>
+    <script> 
+        function rollimages(e)
+        {
+            var element =e.target;
+            if(element.tagName="img")
+                {
+                    document.getElementById("main").src= element.src;
+                }
+        }
+    </script>
+</body>
+</html>
