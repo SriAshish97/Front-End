@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Registration</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/whatever.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+
+    <script>
+        function validateForm()
+        {
+            var first_name = document.forms["myform"]["first_name"];
+            var last_name = document.forms["myform"]["last_name"];
+            var email = document.forms["myform"]["email"];
+            var phone = document.forms["myform"]["phone"];
+            var password = document.forms["myform"]["Password"];
+
+
+            if (first_name.value == "")
+            {
+                window.alert("Please enter your name.");
+                name.focus();
+                return false;
+            }
+            if (last_name.value == "")
+            {
+                window.alert("Please enter your name.");
+                name.focus();
+                return false;
+            }
+
+
+            if (email.value == "")
+            {
+                window.alert("Please enter a valid e-mail address.");
+                email.focus();
+                return false;
+            }
+
+            if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value)))
+            {
+                alert("You have entered an invalid email address!")
+                return (false)
+            }
+
+
+            if (phone.value == "")
+            {
+                window.alert("Please enter your telephone number.");
+                phone.focus();
+                return false;
+            }
+            var phoneno = /^\d{10}$/;
+            if(!(phone.value.match(phoneno)))
+            {
+                alert("Please Enter a Vaild Phone Number");
+                return false;
+            }
+
+            if (password.value == "")
+            {
+                window.alert("Please enter your password");
+                password.focus();
+                return false;
+            }
+            var passw=  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
+            if(!(password.value.match(passw)))
+            {
+                alert('a password between 6 to 20 characters which contain at least one numeric digit, one uppercase and one lowercase letter');
+                return false;
+            }
+
+        }
+    </script>
+</head>
+<body>
+<nav class=" row navbar navbar-expand-sm  blue bg-white sticky-top"     >
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="navbar-brand" href="Home.html">The Shoe Company</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="Home.html">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="Men.html">Men</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="Women.html">Women</a>
+        </li>
+
+        <li class="nav-item"><a class="nav-link" href="Contact_Us.html">Contact Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="Login%20Page.html">Login</a></li>
+        <li class="nav-item">
+            <a class="nav-link" href="OurProducts.html">Shooping Cart</a>
+        </li>
+    </ul>
+
+</nav>
+
+
+<form id="intro1" name="myform" action="registration.php" method="post"  style="margin: auto; text-align: center; width: 100%" onsubmit="return validateForm()">
+    <h2>Registration</h2>
+    First Name:<input  name="first_name" type="text"/><br><br>
+    Last Name:<input name="last_name" type="text"/><br><br>
+    Phone:<input name="phone" type="text"/><br><br>
+    Email:<input name="email" type="text"/><br><br>
+    Gender:<input type="radio" name="gen">Male<input type="radio" name="gen">Female<br><br>
+    Password:<input  name="password" type="password"><br><br>
+    <button class="button">Register</button>
+
+</form>
+
+<footer class="page-footer font-small blue fixed-bottom bg-primary">
+
+    <!-- Copyright footer , copy this footer also-->
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+        <a class="text-white" href="Home.html"> TheShoeCompany.com</a>
+    </div>
+    <!-- Copyright -->
+
+</footer>
+
+</body>
+</html>
